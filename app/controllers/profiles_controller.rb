@@ -21,13 +21,11 @@ class ProfilesController < ApplicationController
     @difficulties = []
     @profiles = []
 
-    age = params[:age]
-    ethnicity = params[:ethnicity]
-    height = params[:height]
-    body_type = params[:body_type]
-    interests = params[:interests]
-
-    raise
+    age = params[:profile][:age]
+    ethnicity = params[:profile][:ethnicity]
+    height = params[:profile][:height]
+    body_type = params[:profile][:body_type]
+    interests = params[:profile][:interests]
 
     random_select()
 
@@ -128,9 +126,9 @@ class ProfilesController < ApplicationController
     # end
   end
 
-  private
+  # private
 
-  def profile_params
-    params.require(:profile).permit(:age, :body_type, :height, :ethnicity, :picture, :name, :interests, :url)
-  end
+  # def profile_params
+  #   params.require(:profile).permit(:age, :body_type, :height, :ethnicity, :picture, :name, :interests, :url)
+  # end
 end
