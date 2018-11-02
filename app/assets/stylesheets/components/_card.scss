@@ -1,0 +1,61 @@
+.card {
+  background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+  display: flex;
+  flex: auto;
+  flex-box: center;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center !important;
+  width: 50vh;
+  height: 50vh;
+  border-radius: 15px;
+  margin-bottom: 10vh !important;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.card i {
+  color: black;
+}
+
+
+.card-body {
+  height: 300px;
+  background-size: cover;
+  background-color: blue;
+  color: black;
+  position: relative;
+}
+
+.card h2 {
+  text-align: center !important;
+  background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+  font-family: 'Helvetica';
+  color: white;
+}
+
+.card ol {
+  font-family: 'Brush Script MT', cursive;
+  text-align: left !important;
+  padding-bottom: 20vh;
+  background-color: white;
+  color: black;
+  width: 15vw;
+  height: 20vh;
+  border-radius: 10px;
+  margin-left: 1vw;
+  opacity: 0.7;
+}
+
+/* Your card CSS code here */
+
+.card:hover {
+  opacity: 0.8;
+  background-color: #6AD58B;
+  z-index: 5;
+}
+
+.card i:hover {
+  color: white;
+}
+

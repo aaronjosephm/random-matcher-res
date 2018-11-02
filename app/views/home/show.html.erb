@@ -16,114 +16,25 @@
   </nav>
 </div>
 
-     <!-- <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="align-self-center">
-          <img src="love.jpg" class="img-fluid" alt="Responsive image" style="opacity: 0.5; margin-left: 15em" height="50%">
-          <div class="centered" style="position: absolute; text-align: center; font-size: large; top: 50%; font-family: 'Brush Script MT', cursive; font-style: normal; color: black; line-height: 100px; font-weight: 500;">
-            <h1 style="font-size: 100px; margin-left: 4em;">Random Matcher</h1>
-            <p style="font-size: 50px; margin-left: 8em; margin-top: 100px;">"Find your other half"</p>
-        </div>
-      </div>
-    </div> -->
+<div class="jumbotron jumbotron-fluid" style="background-color: #3383FF">
+  <div class="container">
+    <h1 class="display-4" style="text-align: center; font-family: 'Brush Script MT', cursive; font-style: normal;">Random Matcher</h1>
+    <h3 class="display-4" style="text-align: center; font-family: 'Brush Script MT', cursive; font-style: normal;">"Find your other half"</h3>
+  </div>
+</div>
 
-    <div class="jumbotron jumbotron-fluid" style="background-color: #3383FF">
-      <div class="container">
-        <h1 class="display-4" style="text-align: center; font-family: 'Brush Script MT', cursive; font-style: normal;">Random Matcher</h1>
-        <h3 class="display-4" style="text-align: center; font-family: 'Brush Script MT', cursive; font-style: normal;">"Find your other half"</h3>
-      </div>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(100, 100, 100, 0.2), rgba(100, 100, 100, 0.05)), url('<%= image_path 'love.jpg' %>');">
+</div>
 
-    <div class="shadow p-3 mb-5 bg-white rounded">
+<div class="jumbotron jumbotron-fluid" style="background-color: #3383FF">
+  <div class="container">
+    <h1 class="display-4" style="color: white">Enter in the fields...</h1>
+    <p class="lead" style="font-family: Helvetica">Fill out the description of the partner you're looking for:</p>
+  </div>
+</div>
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="align-self-center">
-          <img src="love.jpg" class="img-fluid" alt="Responsive image" style="opacity: 0.5; background-size: auto 75%;" height="100%">
-          <div class="centered" style="position: absolute; text-align: center; top: 50%; font-family: 'Brush Script MT', cursive; font-style: normal; color: black;">
-            <h1 style="font-size: 25pt; margin-left: auto; text-align: center"></h1>
-            <p style="font-size: 25pt;background-size: auto 75%;"></p>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
+  <%= link_to profiles_url, method: :get do %>
+    <button type="submit" class="btn btn-primary btn-lg btn-block"><h2>Get Started!</h2></button>
+  <% end %>
 </div>
 </div>
-
-
-
-    <div class="jumbotron jumbotron-fluid" style="background-color: #3383FF">
-      <div class="container">
-        <h1 class="display-4" style="color: white">Enter in the fields...</h1>
-        <p class="lead" style="font-family: Helvetica">Fill out the description of the partner you're looking for:</p>
-      </div>
-    </div>
-
-
-    <!-- <div class="d-flex justify-content-center"> -->
-      <div class="container" style="margin-bottom: 100px">
-      <div class="custom-control custom-radio custom-control-inline">
-      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-      <label class="custom-control-label" for="customRadioInline1">Male</label>
-    </div>
-    <div class="custom-control custom-radio custom-control-inline">
-      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-      <label class="custom-control-label" for="customRadioInline2">Female</label>
-    </div>
-    <form action="/" method="post">
-    <div class="form-group col-md-6" width="600">
-    <h2><label for="exampleFormControlInput1">Age</label></h2>
-    <input name="age" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="age" width="300">
-    <h2><label for="exampleFormControlInput1">Ethnicity</label></h2>
-    <select name="ethnicity" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="caucasian, hispanic, African-American, etc.">
-      <option>Caucasian</option>
-      <option>African American</option>
-      <option>Hispanic</option>
-      <option>Asian</option>
-      <option>Pacific Islander</option>
-      <option>Middle Eastern</option>
-      <option>Indian</option>
-      <option>Native American</option>
-      <option>Mixed</option>
-      <option>Other</option>
-    </select>
-    <h2><label for="exampleFormControlInput1">height</label></h2>
-    <select name="height" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="in ft.">
-      <option>4' 10</option>
-      <option>4' 11</option>
-      <option>5' 0</option>
-      <option>5' 1</option>
-      <option>5' 2</option>
-      <option>5' 3</option>
-      <option>5' 4</option>
-      <option>5' 5</option>
-      <option>5' 6</option>
-      <option>5' 7</option>
-      <option>5' 8</option>
-      <option>5' 9</option>
-      <option>5' 10</option>
-      <option>5' 11</option>
-      <option>6' 0</option>
-      <option>6' 1</option>
-      <option>6' 2</option>
-      <option>6' 3</option>
-      <option>6' 4</option>
-      <option>6' 5</option>
-      <option>6' 6</option>
-    </select>
-    <h2><label for="exampleFormControlInput1">body type</label></h2>
-    <select name="body_type" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Athletic, body-builder, skinny, etc.">
-      <option>Athletic body type</option>
-      <option>Skinny body type</option>
-      <option>A Few Extra Pounds body type</option>
-      <option>Average body type</option>
-      <option>Prefer Not To Say body type</option>
-      <option>Thin body type</option>
-    </select>
-    <h2><label for="exampleFormControlInput1">Interests</label></h2>
-    <input name="interests" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="List interests separated by commas" width="300">
-      </div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block"><h2>Find Match!</h2></button>
-    </form>
-  </div>
