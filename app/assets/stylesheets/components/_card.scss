@@ -1,4 +1,4 @@
-.card {
+.card-custom {
   background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
   display: flex;
   flex: auto;
@@ -14,27 +14,27 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-.card i {
+.card-custom i {
   color: black;
 }
 
 
-.card-body {
-  height: 300px;
+.card-body-custom {
+  height: 500px;
   background-size: cover;
   background-color: blue;
   color: black;
   position: relative;
 }
 
-.card h2 {
+.card-custom h2 {
   text-align: center !important;
   background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
   font-family: 'Helvetica';
   color: white;
 }
 
-.card ol {
+.card-custom ol {
   font-family: 'Brush Script MT', cursive;
   text-align: left !important;
   padding-bottom: 20vh;
@@ -49,13 +49,13 @@
 
 /* Your card CSS code here */
 
-.card:hover {
+.card-custom:hover {
   opacity: 0.8;
   background-color: #6AD58B;
   z-index: 5;
 }
 
-.card i:hover {
+.card-custom i:hover {
   color: white;
 }
 

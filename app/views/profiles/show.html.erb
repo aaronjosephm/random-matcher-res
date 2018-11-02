@@ -1,1 +1,21 @@
-<h1>Profile details</h1>
+<div class="container" style="margin-top: 100px; text-align: center;">
+  <h1>Profile details</h1>
+
+  <div class="container">
+        <div class="card-custom" style="margin: auto;">
+          <div class="card-body-custom" style="background-image: url(<%= @profile.picture %>);">
+          <h2><%= @profile.name %></h2>
+        </div>
+
+      </div>
+      <h2>body-type: <%= @profile.body_type %></h2>
+      <h2>ethnicity: <%= @profile.ethnicity %></h2>
+      <h2>height: <%= @profile.height %></h2>
+      <h2>interests: <%= @profile.interests %></h2>
+
+      <%= link_to profiles_path, method: :get do %>
+        <i class="fas fa-hand-point-left"></i>
+      <% end %>
+</div>
+
+

@@ -28,10 +28,11 @@ class ProfilesController < ApplicationController
     interests = params[:profile][:interests]
 
     random_select()
+    attributes = filter({age: age, ethnicity: ethnicity, height: height, body_type: body_type})
 
     puts
 
-    @profile = Profile.new(profile_params)
+    @profile = Profile.new(attributes)
     if @profile.save
       redirect_to @profile
     else
@@ -78,52 +79,26 @@ class ProfilesController < ApplicationController
       attributes[:name] = tmp_doc.search('#username').text
       attributes[:interests] = tmp_doc.search('#profile-interests-wrapper').text.split(" ")
       puts tmp_doc.search('#age').text
-      @profiles << Profile.new(attributes)
+      @profiles << attributes
     end
     @profiles
   end
 
-  def filter(attributes = {})
+  def filter(attributes)
     @profiles.each do |profile|
       points = 0
-      age_points = (attributes[:age].to_i - profile.age.to_i).abs
+      age_points = (attributes[:age].to_i - profile[:age].to_i).abs
       height_inches = (attributes[:height].split("' ")[0].to_i*12) + attributes[:height].split("' ")[1].to_i
-      profile_height = (profile.height.split("'")[0].to_i*12) + profile.height.split("'")[1].to_i
+      profile_height = (profile[:height].split("'")[0].to_i*12) + profile[:height].split("'")[1].to_i
       height_points = (height_inches - profile_height).abs
-      points += age_points if attributes[:age] != profile.age
-      points += 10 if attributes[:ethnicity] != profile.ethnicity
-      points += 10 if attributes[:body_type] != profile.body_type
-      points += height_points if attributes[:height] != profile.height
-      profile.points = points
+      points += age_points if attributes[:age] != profile[:age]
+      points += 10 if attributes[:ethnicity] != profile[:ethnicity]
+      points += 10 if attributes[:body_type] != profile[:body_type]
+      points += height_points if attributes[:height] != profile[:height]
+      profile[:points] = points
     end
-    @profiles.sort_by! { |profile| profile.points }
+    @profiles.sort_by! { |profile| profile[:points] }
     @profiles[0]
-  end
-
-  def build(attributes = {})
-    # age = attributes[:age]
-    # ethnicity = attributes[:ethnicity]
-    # height = attributes[:height]
-    # body_type = attributes[:body_type]
-    # for i in (0..100)
-    url = "https://www.pof.com/viewprofile.aspx?profile_id=188544953"
-    html_file = open(url).read
-    doc = Nokogiri::HTML(html_file)
-    attributes = {}
-    puts "age: " + doc.search('#age').text
-    puts "ethnicity " + doc.search('#ethnicity').text
-    puts "height: " + doc.search('#height').text.split('"')[0]
-    puts "body type: " + doc.search('#body').text
-    attributes[:age] = doc.search('#age').text
-    attributes[:ethnicity] = doc.search('#ethnicity').text
-    attributes[:height] = doc.search('#height').text.split('"')[0]
-    attributes[:body_type] = doc.search('#body').text
-    return attributes
-    # doc.search('.m_titre_resultat').each { |ele| @result << ele.text.strip }
-    # doc.search('.m_texte_resultat').each { |ele| @result_details << ele.text.strip }
-    # doc.search('.m_detail_time').each { |ele| @prep_times << ele.text.strip.split(" ")[1] }
-    # doc.search('.m_detail_recette').each { |ele| difficulties << ele.text.strip.split("-")[2].strip }
-    # end
   end
 
   # private
