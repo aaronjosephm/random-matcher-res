@@ -4,25 +4,27 @@
 
 
 <div class="container" style="margin-top: 100px;">
-  <% @profiles.each do |profile| %>
-  <div class="col-md-6 offset-md-6" style="text-align: center; display: flex; margin: auto;">
-        <div class="card-custom">
-          <div class="card-body-custom" style="background-image: url(<%= profile.picture %>);">
-          <h2><%= profile.name %></h2>
+  <% if @profiles.size > 0 %>
+    <% @profiles.each do |profile| %>
+    <div class="col-md-6 offset-md-6" style="text-align: center; display: flex; margin: auto;">
+          <div class="card-custom">
+            <div class="card-body-custom" style="background-image: url(<%= profile.picture %>);">
+            <h2><%= profile.name %></h2>
+          </div>
+           <ul class="list-inline">
+            <li class="list-inline-item" style="padding-right: 10vw;"><%= link_to profile_path(profile), method: :get do %>
+              <i class="fas fa-edit"></i>
+              <% end %>
+            </li>
+            <li class="list-inline-item" style="padding-left: 10vw;">
+              <%= link_to profile_path(profile), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </li>
+          </ul>
+          </div>
         </div>
-         <ul class="list-inline">
-          <li class="list-inline-item" style="padding-right: 10vw;"><%= link_to profile_path(profile), method: :get do %>
-            <i class="fas fa-edit"></i>
-            <% end %>
-          </li>
-          <li class="list-inline-item" style="padding-left: 10vw;">
-            <%= link_to profile_path(profile), method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </li>
-        </ul>
-        </div>
-      </div>
+    <% end %>
   <% end %>
 </div>
 
